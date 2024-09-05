@@ -25,6 +25,39 @@ dockerhub_username: ваш_логин_на_докерхабе
 - Проект Kittygram доступен по доменному имени, указанному в `tests.yml`.
 - Пуш в ветку main запускает тестирование и деплой Kittygram, а после успешного деплоя вам приходит сообщение в телеграм.
 - В корне проекта есть файл `kittygram_workflow.yml`.
+### Как заполнить env:
+
+```
+POSTGRES_DB=kittygram
+POSTGRES_USER=kittygram_user
+POSTGRES_PASSWORD=kittygram_password
+DB_NAME=kittygram
+SECRET_KEY=django-insecure-cg6*%6d51ef8f#4!r3*$vmxm4)abgjw8mo!4y-q*uq1!4$-89$django-insecure-cg6*%6d51ef8f#4!r3*$vmxm4)abgjw8mo!4y8mo!4y-q*uq1!4$-89$
+DEBUG=False
+ALLOWED_HOSTS=127.0.0.1,localhost,kittyyandex.zapto.org,84.201.179.197
+```
+
+
+### Как запустить проект:
+
+Запустите Docker Compose с этой конфигурацией на своём компьютере. Название файла конфигурации надо указать явным образом, ведь оно отличается от дефолтного. Имя файла указывается после ключа -f
+
+```
+docker compose -f docker-compose.production.yml up
+```
+Сразу же соберите статику:
+```
+docker compose -f docker-compose.production.yml exec backend python manage.py collectstatic
+```
+```
+docker compose -f docker-compose.production.yml exec backend cp -r /app/collected_static/.
+```
+
+Примените миграции:
+
+```
+docker compose -f docker-compose.production.yml exec backend python manage.py migrate
+```
 
 ### Стек использованных технологий
 ### Язык программирования и фреймворк:
