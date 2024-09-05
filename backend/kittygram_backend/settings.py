@@ -5,7 +5,7 @@ from pathlib import Path
 
 load_dotenv(override=True)
 
-SECRET_KEY = os.getenv('SECRET_KEY')
+SECRET_KEY = os.getenv('SECRET_KEY', 'random')
 
 DEBUG = os.getenv('DEBUG', 'false').lower() == 'true'
 
