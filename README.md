@@ -1,4 +1,4 @@
-[![Main Taski workflow](https://github.com/Stepan22042004/kittygram_final/actions/workflows/main.yml/badge.svg)]
+![Main Taski workflow](https://github.com/Stepan22042004/kittygram_final/actions/workflows/main.yml/badge.svg)
 #  Как работать с репозиторием финального задания
 
 ## Что нужно сделать
