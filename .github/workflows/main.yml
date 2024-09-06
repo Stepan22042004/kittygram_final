@@ -2,8 +2,6 @@ name: Main Taski workflow
 
 on:
   push:
-    branches:
-      - main
 
 jobs:
   send_message:
